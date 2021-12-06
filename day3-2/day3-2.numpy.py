@@ -1,12 +1,16 @@
 import numpy as np
 
-def bincounts(data, val):
-    counts = np.bincount(data)
-
 def counts(data):
     arr = np.array([list(line) for line in data]).astype(np.int8)
     col_totals = arr.sum(axis=0)
     return col_totals
+
+def filter_pos(bitlist, pos):
+    if pos==11 or len(bitlist)==1:
+        return bitlist
+    else: 
+        return 
+
 
 def get_gamma(data):
     tots = counts(data)
@@ -30,26 +34,14 @@ def get_eps_fast(gamma):
 def get_power_rate(data):
     gamma = get_gamma(data)
     epsilon = get_epsilon(data)
+
     return gamma * epsilon
-
-def axis_swap(data):
-    arr = np.array([list(line) for line in data]).astype(np.int8)
-    return arr.swapaxes(0,1)
-
 
 
 def main():
     with open("input") as f:
         data = f.read().splitlines()
     print(get_power_rate(data))
-    
-    temp = axis_swap(data)
-    f_count = []
-    for row in temp:
-        counts = np.bincount(row)
-        f_count.append(counts)
-    print(np.bincount(axis_swap(data)))
-    print(most_f)
 
 if __name__ == "__main__":
     main()
