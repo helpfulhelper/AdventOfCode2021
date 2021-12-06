@@ -1,6 +1,7 @@
 import code
 import numpy as np
 from itertools import cycle
+import matplotlib.pyplot as plt
 
 class Board:
     def __init__(self, x_max, y_max):
@@ -66,6 +67,8 @@ def main():
         B.mark_line(m)
         B.mark_diags(m)
 
+    plt.imshow(B.board)
+    plt.show()
     #print(np.fliplr(np.rot90(B.board,3)))
     print(B.count_danger())
 
