@@ -24,7 +24,7 @@ def main():
     tot_cost = [sum(d) for d in cost]
     print(min(tot_cost))
     
-
+###THIS IS TERRIBLE A TERRIBLE IMPLEMENTATION. SO UGLY
 
 if __name__ == "__main__":
     main()
