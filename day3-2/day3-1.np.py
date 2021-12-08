@@ -49,8 +49,6 @@ def get_oxy_bin(arr, pos = 0):
 
 def get_co2_bin(arr, pos = 0):
     if len(arr) == 1:
-        print(arr)
-        print(len(arr))
         return arr
     else:
         com = get_col_min(arr, pos)
@@ -60,25 +58,14 @@ def get_co2_bin(arr, pos = 0):
 def get_lifesupport(arr):
     o = get_oxy_bin(arr)[0]
     c = get_co2_bin(arr)[0]
-    print(o, c)
     oxy = int("".join(str(i) for i in o),2)
     co2 = int("".join(str(i) for i in c),2)
-    print(oxy, co2)
     return oxy*co2
 
 def main():
 #    data = gobble('example')
     npd = np.genfromtxt('input', delimiter=1, dtype=int)
-
-#   print([np.bincount(d) for d in np.transpose(npd)])
-
-
-
-    ls = get_lifesupport(npd)
-    print(ls)
-
-    #print(get_oxy(npd,2))
-    #print(npd[get_col_max(npd,0)])
-
+    print(get_lifesupport(npd))
+    
 if __name__ == "__main__":
     main()
