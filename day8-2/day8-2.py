@@ -29,7 +29,7 @@ class Digit:
                 self.enc["4"] = sig
             elif len(sig) == 7:
                 self.enc["8"] = sig
-        #6 digits
+        #   6 segments
         for sig in self.sigpat:
             if len(sig) == 6:
                 if len(set(self.enc["1"]) - set(sig)) != 0:
@@ -38,7 +38,7 @@ class Digit:
                     self.enc["0"] = sig
                 else:
                     self.enc["9"] = sig
-        #5 digits
+        #   5 segments
         for sig in self.sigpat:
             if len(sig) == 5:
                 if len(set(self.enc["1"]) - set(sig)) == 0:
