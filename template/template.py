@@ -6,7 +6,7 @@ def gobble(filename):
     return data
 
 def main():
-    data = gobble('input')
+    data = gobble('example')
 #    data = np.genfromtxt('example')
     print(data)
 
