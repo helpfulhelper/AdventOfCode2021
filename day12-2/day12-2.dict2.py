@@ -32,8 +32,6 @@ def all_paths(graph, start, end, path=[]):
                     paths.append(newpath)            
             #else it's a small cave, and if we've only visited it once before AND we haven't visited any other small cave twice, we can add it to our pathing
             elif path.count(node) == 1 and is_all_small_uniq(path):
-                #If it is, recurse all available paths again
-                #print("in a large cave")
                 newpaths = all_paths(graph, node, end, path)
                 for newpath in newpaths:
                     paths.append(newpath)
