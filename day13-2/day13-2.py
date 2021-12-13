@@ -9,8 +9,11 @@ def gobble(filename):
 def step(grid, inst):
     axis = 0 if inst[0] == "x" else 1
     idx = int(inst[1])
+    #split along given axis at the coordinate given in the instruction, dropping the coordinate line
     p1,_,p2 = np.split(grid, [idx,idx+1], axis)
+    #flip the folding piece as needed
     p2 = np.flipud(p2) if not axis else np.fliplr(p2)
+    #pad with false/0s as appropriate to match shapes
     p2 = np.pad(p2, ((p1.shape[0]-p2.shape[0],0),(p1.shape[1] - p2.shape[1],0)),'constant')
     p3 = p1 + p2
     return p3
