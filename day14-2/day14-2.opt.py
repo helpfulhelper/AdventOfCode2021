@@ -21,11 +21,9 @@ def step(rules:dict, prev:Counter()):
     new = Counter()
     #for each digraph in our previous round
     for k in prev:
-        #check our rulebook
-        if k in rules:
-            #if digraph foo is in our rule book, counts of digraph xA and Ay += foo
-            new[rules[k][0]] += prev[k]
-            new[rules[k][1]] += prev[k]
+    #digraph foo is in our rule book, counts of digraph xA and Ay += foo
+        new[rules[k][0]] += prev[k]
+        new[rules[k][1]] += prev[k]
     #print(prev, new)
     return new
 
